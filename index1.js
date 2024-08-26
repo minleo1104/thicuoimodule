@@ -1,25 +1,25 @@
 
 function processScore() {
-    let score = parseInt(document.getElementById('scoreInput').value);
+    let diem = parseInt(document.getElementById('diemInput').value);
 
-    if (isNaN(score) || score < 0 || score > 100) {
+    if (isNaN(diem) || diem < 0 || diem > 100) {
         alert("Điểm số phải nằm trong khoảng từ 0 đến 100.");
         return;
     }
 
-    if (score < 50) {
-        document.getElementById('ketqua').innerText = `Điểm số ${score} là trượt.`;
+    if (diem < 50) {
+        document.getElementById('ketqua').innerText = `Điểm số ${diem} là trượt.`;
         return;
     }
 
-    let roundedScore = score;
+    let diemTron = diem;
 
-    if (score >= 48) {
-        let nextMultipleOf5 = Math.ceil(score / 5) * 5;
-        if (nextMultipleOf5 - score < 3) {
-            roundedScore = nextMultipleOf5;
+    if (diem >= 48) {
+        let BoiCua5 = Math.ceil(diem / 5) * 5;
+        if (BoiCua5 - diem < 3) {
+            diemTron = BoiCua5;
         }
     }
 
-    document.getElementById('ketqua').innerText = `Điểm số làm tròn là: ${roundedScore}`;
+    document.getElementById('ketqua').innerText = `Điểm số làm tròn là: ${diemTron}`;
 }
